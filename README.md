@@ -4,11 +4,7 @@ This project contains an autonomous AI agent designed to automatically generate 
 How the Agent Works
 The agent is built as a cyclical graph or state machine using LangGraph. It follows a "Plan, Generate, Test, Refine" loop. First, the Planner node reads the sample PDF and CSV to create a detailed, context-rich prompt for the LLM. The Generator (the LLM) then writes the Python parser code. Next, the Executor node saves this code and runs a test harness against it, comparing the parser's output to the sample CSV. A Decision node then checks the test result: if it passes, the process ends successfully. If it fails and attempts remain, the process moves to a Refiner node, which sends the broken code and the error message back to the LLM to be fixed, and the cycle repeats.
 
-[ Plan & Generate Code ] -> [ Execute & Test Code ] -> [ Did it Pass? ] --(Yes)--> [ END ]
-                                      |                     |
-                                     (No)                   |
-                                      |                     V
-                                      +----- [ Refine Code ] <---+
+![Untitled](https://github.com/user-attachments/assets/d8242b85-1a63-4bdb-9c9f-7f46f3164e86)
 
 How to Run the Project (5 Steps)
 Follow these steps to set up and run the agent on your local machine.
