@@ -1,0 +1,6 @@
+langgraph
+langchain-google-genai
+python-dotenv
+pandas
+pypdf
+camelot-py[cv]
